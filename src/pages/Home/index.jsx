@@ -1,7 +1,12 @@
-import React from 'react'
+import Web3 from 'web3'
+import React, { useEffect } from 'react'
 
-const Home = () => (
-  <h1>MegaHack - Spark</h1>
-)
+const Home = () => {
+  useEffect(() => {
+    const web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545')
+    console.log({ web3 })
+  }, [])
+  return <h1>MegaHack - Spark</h1>
+};
 
-export default Home
+export default Home;
