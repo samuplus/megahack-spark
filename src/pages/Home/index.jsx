@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 
 import Header from 'components/Header'
 import CovidWarning from 'components/CovidWarning'
+import TalkToDoctorCard from 'components/Cards/TalkToDoctorCard'
 
 import * as S from './styles';
 
@@ -42,6 +43,10 @@ const Home = () => {
               Bem-vindo a Área do Paciente, onde você poderá ver seus agendamentos, histórico e resultados de exames. Todo nosso relacionamento poderá ser feito de maneira fácil e rápida por aqui.
             </p>
           </S.WelcomeMessage>
+
+          <article>
+            <TalkToDoctorCard />
+          </article>
 
         </S.HomeContainer>
       </S.Content>
