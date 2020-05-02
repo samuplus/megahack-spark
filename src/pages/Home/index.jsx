@@ -2,12 +2,14 @@ import React, { useEffect } from 'react'
 import Web3 from 'web3'
 import Fortmatic from 'fortmatic'
 
+import Header from 'components/Header'
+
 const fortmaticKey = process.env.REACT_APP_FORMATIC_TEST
 
 const Home = () => {
-  useEffect(() => {
-    getAccounts()
-  }, [])
+  // useEffect(() => {
+  //   getAccounts()
+  // }, [])
 
   const getAccounts = async () => {
     try {
@@ -23,7 +25,7 @@ const Home = () => {
     }
   }
 
-  return <h1>MegaHack - Spark</h1>
+  return <Header />
 };
 
 export default Home;
