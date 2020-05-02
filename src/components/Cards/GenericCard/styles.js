@@ -21,6 +21,7 @@ export const IconWrapper = styled.div`
 
   svg {
     color: ${colors.blueDark};
+    height: 60px;
     width: 60px;
   }
 `
