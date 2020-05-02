@@ -5,6 +5,7 @@ import React, { useEffect } from 'react'
 import Header from 'components/Header'
 import CovidWarning from 'components/CovidWarning'
 import TalkToDoctorCard from 'components/Cards/TalkToDoctorCard'
+import RemediesCard from 'components/Cards/RemediesCard'
 
 import * as S from './styles';
 
@@ -46,6 +47,7 @@ const Home = () => {
 
           <article>
             <TalkToDoctorCard />
+            <RemediesCard />
           </article>
 
         </S.HomeContainer>
