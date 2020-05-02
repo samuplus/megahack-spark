@@ -36,6 +36,13 @@ const Home = () => {
         <S.HomeContainer>
           <CovidWarning />
 
+          <S.WelcomeMessage>
+            <h2>Olá, João Pedro Souza.</h2>
+            <p>
+              Bem-vindo a Área do Paciente, onde você poderá ver seus agendamentos, histórico e resultados de exames. Todo nosso relacionamento poderá ser feito de maneira fácil e rápida por aqui.
+            </p>
+          </S.WelcomeMessage>
+
         </S.HomeContainer>
       </S.Content>
     </>
