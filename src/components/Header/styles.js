@@ -52,15 +52,30 @@ export const HeaderSettings = styled.div`
 
 export const HeaderSettingsUser = styled.div`
   align-items: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+
+  p {
+    color: ${colors.blue};
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+`
+
+export const HeaderSettingsUserIcon = styled.div`
+  align-items: center;
   background-color: #F4F5F4;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   height: 48px;
-  margin-left: 20px;
   width: 48px;
 
   svg {
+    color: #C3CBCD;
     margin-left: 0;
   }
 `

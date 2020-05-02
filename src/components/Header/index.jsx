@@ -32,8 +32,11 @@ const Header = () => (
         <ConfigurationIcon />
 
         <S.HeaderSettingsUser>
-          <UserIcon />
+          <S.HeaderSettingsUserIcon>
+            <UserIcon />
+          </S.HeaderSettingsUserIcon>
 
+          <p>João P.</p>
         </S.HeaderSettingsUser>
       </S.HeaderSettings>
     </S.HeaderContainer>
