@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 // import Fortmatic from 'fortmatic'
 
 import Header from 'components/Header'
+import MenuMobile from 'components/MenuMobile'
 import CovidWarning from 'components/CovidWarning'
 import TalkToDoctorCard from 'components/Cards/TalkToDoctorCard'
 import RemediesCard from 'components/Cards/RemediesCard'
@@ -33,6 +34,7 @@ const Home = () => {
 
   return (
     <>
+      <MenuMobile />
       <Header />
 
       <S.Content>

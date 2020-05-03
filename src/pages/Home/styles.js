@@ -10,7 +10,11 @@ export const Content = styled.section`
 `
 
 export const HomeContainer = styled(Container)`
-  padding-top: 40px; 
+  padding-top: 20px; 
+
+  @media (${breakpoints.LARGE}) {
+    padding-top: 40px; 
+  }
 `
 
 export const WelcomeMessage = styled.div`
