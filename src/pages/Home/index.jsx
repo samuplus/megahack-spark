@@ -49,10 +49,10 @@ const Home = () => {
           </S.WelcomeMessage>
 
           <S.Cards>
-            <div>
+            <S.CardsLine>
               <TalkToDoctorCard />
               <RemediesCard />
-            </div>
+            </S.CardsLine>
 
             <ConsultationsCard />
           </S.Cards>

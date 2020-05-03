@@ -1,20 +1,25 @@
 import styled from 'styled-components'
 
-import Container from 'components/Container'
 import colors from 'common/colors'
+import breakpoints from 'common/breakpoints'
+
+import Container from 'components/Container'
 
 export const Content = styled.section`
   background-color: ${colors.backgroundContent};
 `
 
 export const HomeContainer = styled(Container)`
-  padding: 40px 0; 
+  padding-top: 40px; 
 `
 
 export const WelcomeMessage = styled.div`
   margin-bottom: 56px;
   margin-top: 45px;
-  padding: 0 150px;
+
+  @media (${breakpoints.LARGE}) {
+    padding: 0 150px;
+  }
 
   h2 {
     color: ${colors.blueDark};
@@ -31,20 +36,35 @@ export const WelcomeMessage = styled.div`
 `
 
 export const Cards = styled.article`
-  margin-bottom: 50px;
+  padding-bottom: 25px;
 
-  > div {
+  @media (${breakpoints.LARGE}) {
+    padding-bottom: 50px;
+  }
+`
+
+export const CardsLine = styled.div`
+  margin-bottom: 25px;
+
+  @media (${breakpoints.LARGE}) {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+  }
 
-    .remedies-card {
+  .remedies-card {
+    margin-top: 25px;
+
+    @media (${breakpoints.LARGE}) {
       display: flex;
       justify-content: space-between;
+      margin-top: 0;
     }
+  }
 
-    .talk-to-doctor-card,
-    .remedies-card {
+  .talk-to-doctor-card,
+  .remedies-card {
+    @media (${breakpoints.LARGE}) {
       flex: 0 0 auto;
       width: 48%;
     }

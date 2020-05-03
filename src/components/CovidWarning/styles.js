@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import colors from 'common/colors'
+import breakpoints from 'common/breakpoints'
 
 export const Content = styled.div`
   align-items: flex-start;
@@ -12,8 +13,13 @@ export const Content = styled.div`
 
   svg {
     color: white;
+    display: none;
     margin-right: 15px;
     margin-top: 8px;
+
+    @media (${breakpoints.LARGE}) {
+      display: block;
+    }
   }
 `
 
