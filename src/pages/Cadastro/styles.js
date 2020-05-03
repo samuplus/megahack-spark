@@ -6,10 +6,11 @@ import Container from 'components/Container'
 
 export const Content = styled.section`
   background-color: ${colors.backgroundContent};
-  padding: 80px 0;
 `
 
-export const CadastroContainer = styled(Container)``
+export const CadastroContainer = styled(Container)`
+  padding: 80px 0;
+`
 
 export const Title = styled.h1`
   color: ${colors.blue};

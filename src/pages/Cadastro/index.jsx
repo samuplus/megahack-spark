@@ -6,6 +6,7 @@ import {
   Form
 } from 'formik'
 
+import HeaderLogout from 'components/HeaderLogout'
 import Checkbox from 'components/Checkbox'
 import Input from 'components/Input'
 import Button from 'components/Button'
@@ -14,6 +15,8 @@ import * as S from './styles'
 
 const Cadastro = () => (
   <S.Content>
+    <HeaderLogout />
+
     <S.CadastroContainer>
       <S.Title>Vamos começar a cuidar da sua saúde?</S.Title>
 
