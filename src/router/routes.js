@@ -2,6 +2,7 @@ import React from 'react'
 import UniversalRouter from 'universal-router'
 
 import Home from 'pages/Home'
+import Cadastro from 'pages/Cadastro'
 
 const routes = {
   path: '/',
@@ -14,6 +15,12 @@ const routes = {
       path: '',
       async action() {
         return <Home />
+      }
+    },
+    {
+      path: '/cadastro',
+      async action() {
+        return <Cadastro />
       }
     },
   ]
