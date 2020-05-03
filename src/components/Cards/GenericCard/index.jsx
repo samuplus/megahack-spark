@@ -4,12 +4,13 @@ import Button from 'components/Button'
 import * as S from './styles'
 
 const GenericCard = ({
+  customClass,
   title,
   icon: Icon,
   text,
   buttonText
 }) => (
-    <S.Card>
+    <S.Card className={customClass}>
       <S.Title>{title}</S.Title>
       <S.IconWrapper>
         <Icon />

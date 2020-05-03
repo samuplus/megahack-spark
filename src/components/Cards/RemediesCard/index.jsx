@@ -5,6 +5,7 @@ import GenericCard from 'components/Cards/GenericCard'
 
 const RemediesCard = () => (
   <GenericCard
+    customClass="remedies-card"
     title="Medicamentos"
     icon={() => <RemedyIcon />}
     text="Você ainda não possui médicamentos

@@ -48,11 +48,14 @@ const Home = () => {
             </p>
           </S.WelcomeMessage>
 
-          <article>
-            <TalkToDoctorCard />
-            <RemediesCard />
+          <S.Cards>
+            <div>
+              <TalkToDoctorCard />
+              <RemediesCard />
+            </div>
+
             <ConsultationsCard />
-          </article>
+          </S.Cards>
 
         </S.HomeContainer>
       </S.Content>

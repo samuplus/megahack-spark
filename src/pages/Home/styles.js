@@ -29,3 +29,24 @@ export const WelcomeMessage = styled.div`
     text-align: center;
   }
 `
+
+export const Cards = styled.article`
+  margin-bottom: 50px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .remedies-card {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .talk-to-doctor-card,
+    .remedies-card {
+      flex: 0 0 auto;
+      width: 48%;
+    }
+  }
+`

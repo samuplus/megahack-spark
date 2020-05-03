@@ -4,7 +4,7 @@ import Button from 'components/Button'
 import * as S from './styles'
 
 const TalkToDoctorCard = () => (
-  <S.Card>
+  <S.Card className="talk-to-doctor-card">
     <S.CardTop>
       <img src="images/talk-to-doctor.svg" alt="" />
       <S.CardMessage>NÃO ESTÁ SE SENTINDO BEM?</S.CardMessage>

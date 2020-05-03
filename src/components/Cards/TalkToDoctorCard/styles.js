@@ -9,6 +9,7 @@ export const CardMessage = styled.h2`
   background-color: ${colors.blue};
   color: white;
   font-size: 18px;
+  line-height: 20px;
   font-weight: normal;
   padding: 10px;
 `
