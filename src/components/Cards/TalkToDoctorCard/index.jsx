@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Button from 'components/Button'
 import * as S from './styles'
 
 const TalkToDoctorCard = () => (
@@ -15,6 +16,9 @@ const TalkToDoctorCard = () => (
         Perferendis voluptatibus soluta rem quidem quia alias nihil facere omnis perspiciatis.
         Fuga, eligendi? Harum vero at minima?
       </p>
+
+      <Button text="Falar com um médico" />
+
     </S.CardBottom>
   </S.Card>
 )

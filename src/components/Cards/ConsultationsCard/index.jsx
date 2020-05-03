@@ -8,6 +8,7 @@ const ConsultationsCard = () => (
     title="Consultas"
     icon={() => <Calendar />}
     text="Você ainda não possui consultas marcadas"
+    buttonText="marcar uma consulta"
   />
 )
 

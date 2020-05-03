@@ -25,3 +25,7 @@ ul {
 img {
   display: block;
 }
+
+button {
+  border: none;
+}

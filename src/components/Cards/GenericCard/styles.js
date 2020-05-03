@@ -4,7 +4,14 @@ import colors from 'common/colors';
 import CardBase from 'components/Cards'
 
 export const Card = styled(CardBase)`
-  padding: 16px 40px;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  padding: 20px 40px;
+
+  button {
+    width: 260px;
+  }
 `
 
 export const Title = styled.h2`

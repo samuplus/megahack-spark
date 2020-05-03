@@ -9,6 +9,7 @@ const RemediesCard = () => (
     icon={() => <RemedyIcon />}
     text="Você ainda não possui médicamentos
     receitados"
+    buttonText="Solicitar medicamento"
   />
 )
 
