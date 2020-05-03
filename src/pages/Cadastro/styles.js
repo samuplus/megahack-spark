@@ -27,3 +27,25 @@ export const FormWrapper = styled.article`
   max-width: 700px;
   width: 100%;
 `
+
+export const FormField = styled.div`
+  display: flex;
+  flex-flow: column;
+  
+  &:not(:last-of-type) {
+    margin-bottom: 14px;
+  }
+
+  label {
+    color: ${colors.blueDark};
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  input {
+    border: 1px solid #D3DCE6;
+    border-radius: 8px;
+    height: 35px;
+  }
+`
