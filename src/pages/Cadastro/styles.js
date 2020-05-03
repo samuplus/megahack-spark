@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import colors from 'common/colors'
+import breakpoints from 'common/breakpoints'
 
 import Container from 'components/Container'
 
@@ -9,7 +10,12 @@ export const Content = styled.section`
 `
 
 export const CadastroContainer = styled(Container)`
-  padding: 80px 0;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+  @media(${breakpoints.LARGE}) {
+    padding: 80px 0;
+  }
 `
 
 export const Title = styled.h1`
@@ -23,10 +29,14 @@ export const FormWrapper = styled.article`
   background: white;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  padding: 50px 150px;
+  padding: 30px 15px;
   margin: 0 auto;
   max-width: 700px;
   width: 100%;
+
+  @media(${breakpoints.LARGE}) {
+    padding: 50px 150px;
+  }
 `
 
 export const FormButtonWrapper = styled.div`
