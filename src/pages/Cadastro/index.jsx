@@ -8,6 +8,9 @@ import {
   ErrorMessage
 } from 'formik'
 
+import Checkbox from 'components/Checkbox'
+import Input from 'components/Input'
+
 import * as S from './styles'
 
 const Cadastro = () => (
@@ -19,50 +22,16 @@ const Cadastro = () => (
         <Formik initialValues={{ email: '', password: '' }} onSubmit={() => console.log('submit')}>
           {({ isSubmitting }) => (
             <Form>
-              <S.FormField>
-                <label htmlFor="name">Nome completo:</label>
-                <Field type="text" name="name" />
-                <ErrorMessage name="name" component="div" />
-              </S.FormField>
+              <Input name="name" type="text" label="Nome completo:" />
+              <Input name="cpf" type="text" label="CPF:" />
+              <Input name="phone" type="text" label="Telefone:" />
+              <Input name="birthdate" type="text" label="Data de nascimento:" />
+              <Input name="human-race" type="text" label="Raça:" />
+              <Input name="gender" type="text" label="Gênero:" />
+              <Input name="cep" type="text" label="CEP:" />
 
               <S.FormField>
-                <label htmlFor="cpf">CPF:</label>
-                <Field type="text" name="cpf" />
-                <ErrorMessage name="cpf" component="div" />
-              </S.FormField>
-
-              <S.FormField>
-                <label htmlFor="phone">Telefone:</label>
-                <Field type="text" name="phone" />
-                <ErrorMessage name="phone" component="div" />
-              </S.FormField>
-
-              <S.FormField>
-                <label htmlFor="birthday">Data de nascimento:</label>
-                <Field type="text" name="birthday" />
-                <ErrorMessage name="birthday" component="div" />
-              </S.FormField>
-
-              <S.FormField>
-                <label htmlFor="human-race">Raça:</label>
-                <Field type="text" name="human-race" />
-                <ErrorMessage name="human-race" component="div" />
-              </S.FormField>
-
-              <S.FormField>
-                <label htmlFor="gender">Gênero:</label>
-                <Field as="select" name="gender">
-                  <option value="m">Masculino</option>
-                  <option value="f">Feminino</option>
-                  <option value="N/A">Não especificado</option>
-                </Field>
-                <ErrorMessage name="gender" component="div" />
-              </S.FormField>
-
-              <S.FormField>
-                <label htmlFor="cep">CEP:</label>
-                <Field type="text" name="cep" />
-                <ErrorMessage name="cep" component="div" />
+                <Checkbox name="terms" label="Eu li e concordo com os termos de uso" />
               </S.FormField>
 
               <button type="submit" disabled={isSubmitting}>

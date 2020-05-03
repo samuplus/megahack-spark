@@ -47,5 +47,7 @@ export const FormField = styled.div`
     border: 1px solid #D3DCE6;
     border-radius: 8px;
     height: 35px;
+    padding: 4px 12px;
+    outline: none;
   }
 `
