@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import colors from 'common/colors'
 
@@ -13,4 +13,9 @@ export const Button = styled.button`
   padding: 11px 16px;
   outline: none;
   text-transform: uppercase;
+
+  ${(props) =>
+    props.theme === 'secondary' && css`
+      background-color: ${colors.blue};
+  `}
 `

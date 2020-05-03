@@ -17,7 +17,7 @@ const TalkToDoctorCard = () => (
         Fuga, eligendi? Harum vero at minima?
       </p>
 
-      <Button text="Falar com um médico" />
+      <Button>Falar com um médico</Button>
 
     </S.CardBottom>
   </S.Card>

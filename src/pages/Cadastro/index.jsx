@@ -3,13 +3,12 @@
 import React from 'react'
 import {
   Formik,
-  Form,
-  Field,
-  ErrorMessage
+  Form
 } from 'formik'
 
 import Checkbox from 'components/Checkbox'
 import Input from 'components/Input'
+import Button from 'components/Button'
 
 import * as S from './styles'
 
@@ -30,13 +29,13 @@ const Cadastro = () => (
               <Input name="gender" type="text" label="Gênero:" />
               <Input name="cep" type="text" label="CEP:" />
 
-              <S.FormField>
-                <Checkbox name="terms" label="Eu li e concordo com os termos de uso" />
-              </S.FormField>
+              <Checkbox name="terms" label="Eu li e concordo com os termos de uso" />
 
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
+              <S.FormButtonWrapper>
+                <Button theme="secondary" type="submit" disabled={isSubmitting}>
+                  Finalizar cadastro
+                </Button>
+              </S.FormButtonWrapper>
             </Form>
           )}
         </Formik>

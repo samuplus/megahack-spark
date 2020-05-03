@@ -18,7 +18,7 @@ const GenericCard = ({
 
       <S.Text>{text}</S.Text>
 
-      <Button text={buttonText} />
+      <Button>{buttonText}</Button>
     </S.Card>
   )
 
