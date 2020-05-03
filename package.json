@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "formik": "^2.1.4",
     "fortmatic": "^2.0.6",
+    "fs": "^0.0.1-security",
     "history": "^4.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
