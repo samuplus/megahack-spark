@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import colors from 'common/colors';
 import CardBase from 'components/Cards'
@@ -8,6 +8,10 @@ export const Card = styled(CardBase)`
   display: flex;
   flex-flow: column;
   padding: 20px 40px;
+
+  ${(props) => props.hasContent && css`
+    justify-content: flex-start !important;
+  `}
 
   button {
     width: 260px;

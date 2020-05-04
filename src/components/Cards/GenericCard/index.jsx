@@ -8,18 +8,29 @@ const GenericCard = ({
   title,
   icon: Icon,
   text,
-  buttonText
-}) => (
-    <S.Card className={customClass}>
+  buttonText,
+  content: Content
+}) => {
+  return (
+    <S.Card className={customClass} hasContent={Content}>
       <S.Title>{title}</S.Title>
-      <S.IconWrapper>
-        <Icon />
-      </S.IconWrapper>
 
-      <S.Text>{text}</S.Text>
+      {Content && (
+        <Content />
+      )}
 
-      <Button>{buttonText}</Button>
+      {!Content && (
+        <>
+          <S.IconWrapper>
+            <Icon />
+          </S.IconWrapper>
+          <S.Text>{text}</S.Text>
+          <Button>{buttonText}</Button>
+        </>
+      )}
+
     </S.Card>
   )
+}
 
 export default GenericCard
