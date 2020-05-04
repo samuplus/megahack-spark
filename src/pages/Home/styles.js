@@ -74,3 +74,21 @@ export const CardsLine = styled.div`
     }
   }
 `
+
+export const ConsultationWrapper = styled.div`
+  > div {
+    padding-bottom: 40px;
+    width: 100%;  
+
+    section {
+      
+      max-width: 825px;
+      width: 100%;
+
+      @media (${breakpoints.LARGE}) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+`

@@ -33,7 +33,9 @@ const Home = () => (
             <RemediesCard />
           </S.CardsLine>
 
-          <ConsultationsCard />
+          <S.ConsultationWrapper>
+            <ConsultationsCard />
+          </S.ConsultationWrapper>
         </S.Cards>
 
       </S.HomeContainer>
