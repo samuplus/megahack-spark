@@ -8,7 +8,7 @@ import UserIcon from 'icons/User'
 import items from './items'
 import * as S from './styles'
 
-const Header = () => (
+const Header = ({ userName = 'João P.' }) => (
   <S.Header>
     <S.HeaderContainer>
       <S.HeaderLogo>
@@ -36,7 +36,7 @@ const Header = () => (
             <UserIcon />
           </S.HeaderSettingsUserIcon>
 
-          <p>João P.</p>
+          <p>{userName}</p>
         </S.HeaderSettingsUser>
       </S.HeaderSettings>
     </S.HeaderContainer>
