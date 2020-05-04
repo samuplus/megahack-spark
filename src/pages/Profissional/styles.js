@@ -4,7 +4,7 @@ import { default as ContainerBase } from 'components/Container'
 
 export const Content = styled.section`
   background: #F7F7FA;
-
+  padding-bottom: 50px;
 `
 
 export const Container = styled(ContainerBase)`
@@ -25,8 +25,10 @@ export const SearchField = styled.div`
   border-radius: 15px;
   display: flex;
   height: 45px;
-  margin-bottom: 60px;
+  margin: 0 auto 60px auto;
   padding: 0 16px;
+  max-width: 850px;
+  width: 100%;
 
   svg {
     color: rgba(0, 0, 0, 0.54);
@@ -147,6 +149,7 @@ export const ExamsSearchWrapper = styled.div`
 export const ExamesTable = styled.table`
   width: 100%;
   padding: 0 30px;
+  margin-bottom: 25px;
 
   tr {
     height: 40px;
