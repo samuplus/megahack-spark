@@ -1,5 +1,7 @@
 import React from 'react'
 
+import history from 'common/browser-history'
+
 import Logo from 'icons/Logo'
 import Button from 'components/Button'
 
@@ -10,7 +12,9 @@ const HeaderLogout = () => (
     <S.HeaderContainer>
       <Logo />
 
-      <Button>Sou um profissional da saúde</Button>
+      <Button onClick={() => history.push('/cadastro-profissional')}>
+        Sou um profissional da saúde
+      </Button>
     </S.HeaderContainer>
   </S.Header>
 )

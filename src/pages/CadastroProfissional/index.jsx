@@ -9,22 +9,18 @@ import {
 
 import history from 'common/browser-history'
 
-import HeaderLogout from 'components/HeaderLogout'
 import Input from 'components/Input'
 import Button from 'components/Button'
 
-import mhdAbi from 'ethereum/mhdAbi'
 import { createContract } from 'ethereum/mhdContract'
-import { createPatient } from 'ethereum/MyHeathData'
+import { createIssuer } from 'ethereum/MyHeathData'
 
 import * as S from './styles'
-
-// const fortmaticKey = process.env.REACT_APP_FORMATIC_TEST
 
 const fortmaticKey = 'pk_test_89EAB55125C6D022'
 const contractAddress = '0x58e43fdcfcdbadb71533b678648f4913171e1425'
 
-const Cadastro = () => {
+const CadastroProfissional = () => {
   const [userAddress, setUserAddress] = useState(null)
 
   useEffect(() => {
@@ -32,14 +28,12 @@ const Cadastro = () => {
   }, [])
 
   const formInitialValues = {
-    cpf: '',
+    name: '',
+    crm: '',
     phone: '',
-    birthdate: '',
-    ethnicity: '',
-    gender: '',
-    city: '',
-    cep: '',
-    country: '0x5242'
+    institutionName: '',
+    pais: 'BR',
+
   }
 
   const getAccounts = async () => {
@@ -54,43 +48,34 @@ const Cadastro = () => {
     }
   }
 
-  const onSubmit = (values) => {
-    const dataToSend = {
+  const onSubmit = async (values) => {
+    const data = {
       userAddress,
-      dateOfBirth: values.birthdate,
-      genderOfBirth: values.gender,
-      cityOfBirth: values.city,
-      countryOfBirth: values.country,
-      _ethnicity: values.ethnicity
+      ...values
     }
 
-    console.log({ dataToSend });
+    const dataToSend = {
+      userAddress,
+      institutionName: data.institutionName,
+      pais: data.pais
+    }
 
     const contract = createContract(contractAddress)
-    createPatient({ contract, dataToSend, goTo: () => history.push('/home') })
+    createIssuer({ contract, dataToSend, goTo: () => history.push('/dashboard') })
   }
-
 
   return (
     <S.Content>
-      <HeaderLogout />
-
       <S.CadastroContainer>
-        <S.Title>Vamos começar a cuidar da sua saúde?</S.Title>
-
         <S.FormWrapper>
           <Formik initialValues={formInitialValues} onSubmit={onSubmit}>
             {({ isSubmitting }) => (
               <Form>
                 <Input name="name" type="text" label="Nome completo:" />
-                <Input name="cpf" type="text" label="CPF:" />
-                <Input name="phone" type="text" label="Telefone:" />
-                <Input name="birthdate" type="text" label="Data de nascimento:" />
-                <Input name="ethnicity" type="text" label="Raça:" />
-                <Input name="gender" type="text" label="Gênero:" />
-                <Input name="city" type="text" label="Cidade:" />
-                <Input name="cep" type="text" label="CEP:" />
-                <Input name="country" type="text" label="Country:" />
+                <Input name="crm" type="text" label="CRM:" />
+                <Input name="institutionName" type="text" label="Nome do hospital:" />
+                <Input name="phone" type="text" label="Telefone do hospital:" />
+                <Input name="pais" type="text" label="País:" />
 
                 <S.FormButtonWrapper>
                   <Button theme="secondary" type="submit" disabled={isSubmitting}>
@@ -106,4 +91,4 @@ const Cadastro = () => {
   )
 }
 
-export default Cadastro
+export default CadastroProfissional
