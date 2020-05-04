@@ -2,10 +2,20 @@ import React from 'react'
 
 import Header from 'components/Header'
 import SearchIcon from 'icons/Search'
+import LaudoIcon from 'icons/Laudo'
+import TrashIcon from 'icons/Trash'
+import ImagePlaceholderIcon from 'icons/ImagePlaceholder'
 
 import * as S from './styles'
 
 const name = 'Dr. Bruno H'
+
+const SearchField = ({ placeholder = '' }) => (
+  <S.SearchField>
+    <SearchIcon />
+    <input type="text" placeholder={placeholder} />
+  </S.SearchField>
+)
 
 const Profissionais = () => (
   <S.Content>
@@ -13,10 +23,7 @@ const Profissionais = () => (
     <S.Container>
       <S.Title>Olá, {name}</S.Title>
 
-      <S.SearchField>
-        <SearchIcon />
-        <input type="text" placeholder="Digite aqui o nome do paciente ou CPF para realizar uma nova busca" />
-      </S.SearchField>
+      <SearchField placeholder="Digite aqui o nome do paciente ou CPF para realizar uma nova busca" />
 
       <S.CardsWrapper>
         <S.PatientInfo>
@@ -67,6 +74,31 @@ const Profissionais = () => (
           </S.PatientBottom>
         </S.PatientInfo>
 
+        <S.ExamsBlock>
+          <h3>Exames</h3>
+
+          <S.ExamsSearchWrapper>
+            <SearchField placeholder="Digite o nome do exame que deseja solicitar" />
+          </S.ExamsSearchWrapper>
+          <S.ExamesTable>
+            <tr>
+              <td>Data</td>
+              <td>Exames</td>
+              <td>Laudo</td>
+              <td>Imagens</td>
+              <td>{' '}</td>
+            </tr>
+            {[0, 0].map(() => (
+              <tr>
+                <td>12/04/2020</td>
+                <td>Radiografias Digitais - Tórax</td>
+                <td><LaudoIcon /></td>
+                <td><ImagePlaceholderIcon /></td>
+                <td><TrashIcon /></td>
+              </tr>
+            ))}
+          </S.ExamesTable>
+        </S.ExamsBlock>
       </S.CardsWrapper>
     </S.Container>
 

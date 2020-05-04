@@ -121,3 +121,60 @@ export const PatientBottomBlock = styled.div`
     font-size: 14px;
   }
 `
+
+export const ExamsBlock = styled.div`
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-left: 35px;
+  flex: 1;
+
+  h3 {
+    font-weight: 600;
+    font-size: 28px;
+    color: #32325D;
+    padding: 0 32px;
+  }
+`
+
+export const ExamsSearchWrapper = styled.div`
+  padding: 0 80px;
+  margin-top: 16px;
+  margin-bottom: 38px;
+`
+
+export const ExamesTable = styled.table`
+  width: 100%;
+  padding: 0 30px;
+
+  tr {
+    height: 40px;
+
+    &:first-of-type {
+      td {
+        border: none;
+      }
+    }
+
+    &:last-of-type {
+      td {
+        border-bottom: 1px solid #D3DCE6;
+      }
+    }
+
+    td {
+      color: #454444;
+      border-top: 1px solid #D3DCE6;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  svg {
+    color: #1773be;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+`
