@@ -81,7 +81,6 @@ export const ConsultationWrapper = styled.div`
     width: 100%;  
 
     section {
-      
       max-width: 825px;
       width: 100%;
 
@@ -96,7 +95,7 @@ export const ConsultationWrapper = styled.div`
         }
 
         @media (${breakpoints.LARGE}) {
-          margin-bottom: 0;
+          margin-bottom: 0 !important;
         }
       }
     }
