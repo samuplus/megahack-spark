@@ -75,6 +75,7 @@ const CadastroProfissional = () => {
                 <Input name="crm" type="text" label="CRM:" />
                 <Input name="institutionName" type="text" label="Nome do hospital:" />
                 <Input name="phone" type="text" label="Telefone do hospital:" />
+                <Input name="pais" type="text" label="País:" />
 
                 <S.FormButtonWrapper>
                   <Button theme="secondary" type="submit" disabled={isSubmitting}>

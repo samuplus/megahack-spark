@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Web3 from 'web3'
 import Fortmatic from 'fortmatic'
 import {
@@ -15,6 +15,7 @@ import Button from 'components/Button'
 
 import mhdAbi from 'ethereum/mhdAbi'
 import { createContract } from 'ethereum/mhdContract'
+import { createPatient } from 'ethereum/MyHeathData'
 
 import * as S from './styles'
 
@@ -22,11 +23,10 @@ import * as S from './styles'
 
 const fortmaticKey = 'pk_test_89EAB55125C6D022'
 const contractAddress = '0x58e43fdcfcdbadb71533b678648f4913171e1425'
-// let fromAddress = "0xf9aDCc38349E00A5544687b0fAbFdd844547C568"
-const fromAddress = '0x97a85dac5c5e2c4816cc25a5593bfa9a283fbd52'
-const patientAddress = '0xfdeFa2ED3ec4D089be066C4B9503B536ad4ce8Fc'
 
 const Cadastro = () => {
+  const [userAddress, setUserAddress] = useState(null)
+
   useEffect(() => {
     getAccounts()
   }, [])
@@ -35,10 +35,11 @@ const Cadastro = () => {
     cpf: '',
     phone: '',
     birthdate: '',
-    humanrace: '',
+    ethnicity: '',
     gender: '',
+    city: '',
     cep: '',
-    pais: '0x5242'
+    country: '0x5242'
   }
 
   const getAccounts = async () => {
@@ -46,24 +47,27 @@ const Cadastro = () => {
       const fm = new Fortmatic(fortmaticKey)
       const web3 = new Web3(fm.getProvider())
 
-      const userAddress = await web3.eth.getAccounts()
-      const contract = createContract(contractAddress)
-
-      console.log({ contract })
+      const address = await web3.eth.getAccounts()
+      setUserAddress(address[0])
     } catch (error) {
       console.error(error)
     }
   }
 
   const onSubmit = (values) => {
-    const data = {
-      // ethAccount,
-      ...values
+    const dataToSend = {
+      userAddress,
+      dateOfBirth: values.birthdate,
+      genderOfBirth: values.gender,
+      cityOfBirth: values.city,
+      countryOfBirth: values.country,
+      _ethnicity: values.ethnicity
     }
 
-    console.log({ data })
+    console.log({ dataToSend });
 
-    return history.push('/home')
+    const contract = createContract(contractAddress)
+    createPatient({ contract, dataToSend, goTo: () => history.push('/home') })
   }
 
 
@@ -82,9 +86,11 @@ const Cadastro = () => {
                 <Input name="cpf" type="text" label="CPF:" />
                 <Input name="phone" type="text" label="Telefone:" />
                 <Input name="birthdate" type="text" label="Data de nascimento:" />
-                <Input name="humanrace" type="text" label="Raça:" />
+                <Input name="ethnicity" type="text" label="Raça:" />
                 <Input name="gender" type="text" label="Gênero:" />
+                <Input name="city" type="text" label="Cidade:" />
                 <Input name="cep" type="text" label="CEP:" />
+                <Input name="country" type="text" label="Country:" />
 
                 <S.FormButtonWrapper>
                   <Button theme="secondary" type="submit" disabled={isSubmitting}>

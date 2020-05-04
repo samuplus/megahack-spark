@@ -29,3 +29,13 @@ export const createIssuer = async ({
 
   goTo()
 }
+
+export const createPatient = async ({
+  contract, dataToSend, goTo
+}) => {
+  await contract.methods.newPatient(dataToSend.userAddress, dataToSend.dateOfBirth, dataToSend.genderOfBirth, dataToSend.cityOfBirth, dataToSend.countryOfBirth, dataToSend._ethnicity).send({
+    from: dataToSend.userAddress
+  });
+
+  goTo()
+}
