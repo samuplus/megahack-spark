@@ -5,7 +5,7 @@ import breakpoints from 'common/breakpoints'
 
 export const Content = styled.div`
   align-items: flex-start;
-  background-color: ${colors.blueLight};
+  background-color: #75AFDE;
   border-radius: 5px;
   display: flex;
   padding: 16px;
