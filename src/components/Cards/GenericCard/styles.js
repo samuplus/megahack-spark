@@ -1,17 +1,22 @@
 import styled, { css } from 'styled-components'
 
 import colors from 'common/colors';
+import breakpoints from 'common/breakpoints';
 import CardBase from 'components/Cards'
 
 export const Card = styled(CardBase)`
   align-items: center;
   display: flex;
   flex-flow: column;
-  padding: 20px 40px;
+  padding: 10px 20px;
 
   ${(props) => props.hasContent && css`
     justify-content: flex-start !important;
   `}
+
+  @media(${breakpoints.LARGE}) {
+    padding: 20px 40px;
+  }
 
   button {
     width: 260px;

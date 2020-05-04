@@ -89,6 +89,16 @@ export const ConsultationWrapper = styled.div`
         display: flex;
         justify-content: space-between;
       }
+
+      > div {
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+
+        @media (${breakpoints.LARGE}) {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 `
