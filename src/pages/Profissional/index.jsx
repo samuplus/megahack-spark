@@ -18,10 +18,59 @@ const Profissionais = () => (
         <input type="text" placeholder="Digite aqui o nome do paciente ou CPF para realizar uma nova busca" />
       </S.SearchField>
 
+      <S.CardsWrapper>
+        <S.PatientInfo>
+          <S.PatientInfoTitle>Informações do Paciente</S.PatientInfoTitle>
+          <S.PatientInfoContent>
+            <h3>João Pedro de Souza </h3>
 
-      <button onClick={() => console.log('busca')}>buscar paciente pelo cpf</button>
+            <S.PatientInfoData>CPF: <span>064.565.093-98</span></S.PatientInfoData>
+            <S.PatientInfoData column>Data de nascimento:
+              <span>
+                03/10/1995
+              </span>
+            </S.PatientInfoData>
+            <S.PatientInfoData>Raça:
+              <span>
+                Pardo
+              </span>
+            </S.PatientInfoData>
+            <S.PatientInfoData>Gênero:
+              <span>
+                M
+              </span>
+            </S.PatientInfoData>
+            <S.PatientInfoData column>Telefone:
+              <span>
+                +55 (00) 0 0000-2222
+              </span>
+            </S.PatientInfoData>
+            <S.PatientInfoData column>Endereço:
+              <span>
+                Rua José Maria, Conjunto H - 71320-202
+              </span>
+            </S.PatientInfoData>
+          </S.PatientInfoContent>
 
+          <S.PatientBottom>
+            <h3>Alergias</h3>
+
+            <S.PatientBottomBlock>
+              <p>Bioaletrina</p>
+              <span>(Bioallethrin)</span>
+            </S.PatientBottomBlock>
+
+            <S.PatientBottomBlock>
+              <p>Abiraterona</p>
+              <span>(Acetato de abiraterona)</span>
+            </S.PatientBottomBlock>
+          </S.PatientBottom>
+        </S.PatientInfo>
+
+      </S.CardsWrapper>
     </S.Container>
+
+
 
   </S.Content>
 )

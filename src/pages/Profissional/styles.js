@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { default as ContainerBase } from 'components/Container'
 
@@ -40,5 +40,84 @@ export const SearchField = styled.div`
     margin-left: 24px;
     padding: 8px 0;
     outline: none;
+  }
+`
+
+export const CardsWrapper = styled.div`
+  display: flex;
+`
+
+export const PatientInfo = styled.div`
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 410px;
+`
+
+export const PatientInfoTitle = styled.h3`
+  border-bottom: 1px solid #454444;
+  color: #32325D;
+  font-weight: 600;
+  font-size: 28px;
+  padding: 12px 0;
+  text-align: center;
+`
+
+export const PatientInfoContent = styled.div`
+  border-bottom: 1px solid #454444;
+  padding: 25px 20px;
+
+  h3 {
+    color: #1773BE;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+`
+
+export const PatientInfoData = styled.p`
+  color: #454444;
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+
+  ${(props) => props.column && css`
+    display: flex;
+    flex-flow: column;
+  `}
+
+  span {
+    color: #2b7fc4;
+    margin-left: 6px;
+  }
+`
+
+export const PatientBottom = styled.div`
+  margin-bottom: 18px;
+  padding: 16px 0; 
+
+  h3 {
+    color: #1773BE;
+    font-size: 28px;
+    text-align: center;
+  }
+`
+
+export const PatientBottomBlock = styled.div`
+  padding: 0 25px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+  }
+
+  span {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
   }
 `
