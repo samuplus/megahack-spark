@@ -12,9 +12,7 @@ const TalkToDoctorCard = () => (
 
     <S.CardBottom>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Perferendis voluptatibus soluta rem quidem quia alias nihil facere omnis perspiciatis.
-        Fuga, eligendi? Harum vero at minima?
+        Não espere os sintomas piorarem. Fale agora mesmo com a Anna, nosso assistente virtual, e ela te ajudará a encontrar o profissional ideal!
       </p>
 
       <Button>Falar com um médico</Button>
