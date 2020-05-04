@@ -2,7 +2,6 @@ import Web3 from 'web3'
 import Fortmatic from 'fortmatic'
 import mhdAbi from './mhdAbi';
 
-
 const fortmaticKey = 'pk_test_89EAB55125C6D022';
 
 const fm = new Fortmatic(fortmaticKey)

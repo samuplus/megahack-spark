@@ -3,6 +3,8 @@ import UniversalRouter from 'universal-router'
 
 import Home from 'pages/Home'
 import Cadastro from 'pages/Cadastro'
+import CadastroProfissional from 'pages/CadastroProfissional'
+import Profissional from 'pages/Profissional'
 
 const routes = {
   path: '/',
@@ -14,15 +16,27 @@ const routes = {
     {
       path: '',
       async action() {
+        return <Cadastro />
+      }
+    },
+    {
+      path: '/cadastro-profissional',
+      async action() {
+        return <CadastroProfissional />
+      }
+    },
+    {
+      path: '/home',
+      async action() {
         return <Home />
       }
     },
     {
-      path: '/cadastro',
+      path: '/dashboard',
       async action() {
-        return <Cadastro />
+        return <Profissional />
       }
-    },
+    }
   ]
 }
 

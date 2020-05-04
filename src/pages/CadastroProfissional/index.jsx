@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Web3 from 'web3'
 import Fortmatic from 'fortmatic'
 import {
@@ -9,36 +9,31 @@ import {
 
 import history from 'common/browser-history'
 
-import HeaderLogout from 'components/HeaderLogout'
 import Input from 'components/Input'
 import Button from 'components/Button'
 
-import mhdAbi from 'ethereum/mhdAbi'
 import { createContract } from 'ethereum/mhdContract'
+import { createIssuer } from 'ethereum/MyHeathData'
 
 import * as S from './styles'
 
-// const fortmaticKey = process.env.REACT_APP_FORMATIC_TEST
-
 const fortmaticKey = 'pk_test_89EAB55125C6D022'
 const contractAddress = '0x58e43fdcfcdbadb71533b678648f4913171e1425'
-// let fromAddress = "0xf9aDCc38349E00A5544687b0fAbFdd844547C568"
-const fromAddress = '0x97a85dac5c5e2c4816cc25a5593bfa9a283fbd52'
-const patientAddress = '0xfdeFa2ED3ec4D089be066C4B9503B536ad4ce8Fc'
 
-const Cadastro = () => {
+const CadastroProfissional = () => {
+  const [userAddress, setUserAddress] = useState(null)
+
   useEffect(() => {
     getAccounts()
   }, [])
 
   const formInitialValues = {
-    cpf: '',
+    name: '',
+    crm: '',
     phone: '',
-    birthdate: '',
-    humanrace: '',
-    gender: '',
-    cep: '',
-    pais: '0x5242'
+    institutionName: '',
+    pais: 'BR',
+
   }
 
   const getAccounts = async () => {
@@ -46,45 +41,40 @@ const Cadastro = () => {
       const fm = new Fortmatic(fortmaticKey)
       const web3 = new Web3(fm.getProvider())
 
-      const userAddress = await web3.eth.getAccounts()
-      const contract = createContract(contractAddress)
-
-      console.log({ contract })
+      const address = await web3.eth.getAccounts()
+      setUserAddress(address[0])
     } catch (error) {
       console.error(error)
     }
   }
 
-  const onSubmit = (values) => {
+  const onSubmit = async (values) => {
     const data = {
-      // ethAccount,
+      userAddress,
       ...values
     }
 
-    console.log({ data })
+    const dataToSend = {
+      userAddress,
+      institutionName: data.institutionName,
+      pais: data.pais
+    }
 
-    return history.push('/home')
+    const contract = createContract(contractAddress)
+    createIssuer({ contract, dataToSend, goTo: () => history.push('/dashboard') })
   }
-
 
   return (
     <S.Content>
-      <HeaderLogout />
-
       <S.CadastroContainer>
-        <S.Title>Vamos começar a cuidar da sua saúde?</S.Title>
-
         <S.FormWrapper>
           <Formik initialValues={formInitialValues} onSubmit={onSubmit}>
             {({ isSubmitting }) => (
               <Form>
                 <Input name="name" type="text" label="Nome completo:" />
-                <Input name="cpf" type="text" label="CPF:" />
-                <Input name="phone" type="text" label="Telefone:" />
-                <Input name="birthdate" type="text" label="Data de nascimento:" />
-                <Input name="humanrace" type="text" label="Raça:" />
-                <Input name="gender" type="text" label="Gênero:" />
-                <Input name="cep" type="text" label="CEP:" />
+                <Input name="crm" type="text" label="CRM:" />
+                <Input name="institutionName" type="text" label="Nome do hospital:" />
+                <Input name="phone" type="text" label="Telefone do hospital:" />
 
                 <S.FormButtonWrapper>
                   <Button theme="secondary" type="submit" disabled={isSubmitting}>
@@ -100,4 +90,4 @@ const Cadastro = () => {
   )
 }
 
-export default Cadastro
+export default CadastroProfissional
