@@ -53,7 +53,6 @@ export const HeaderListItem = styled.li`
 export const HeaderSettings = styled.div`
   align-items: center;
   display: flex;
-  margin-left: 108px;
 
   svg {
     color: ${colors.blue};
