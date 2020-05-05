@@ -6,6 +6,10 @@ export const Header = styled.header`
   background-color: white;
   border-bottom: 1px solid #E2E5E6;
   padding: 10px 0;
+
+  svg {
+    width: 50px;
+  }
 `
 
 export const HeaderContainer = styled(Container)`

@@ -88,7 +88,7 @@ const Profissionais = () => (
               <td>Imagens</td>
               <td>{' '}</td>
             </tr>
-            {[0, 0].map(() => (
+            {[0, 0, 0].map(() => (
               <tr>
                 <td>12/04/2020</td>
                 <td>Radiografias Digitais - Tórax</td>

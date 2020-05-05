@@ -14,6 +14,7 @@ export const Header = styled.header`
   @media (${breakpoints.LARGE}) {
     display: block;
   }
+
 `
 
 export const HeaderContainer = styled(Container)`
@@ -23,7 +24,10 @@ export const HeaderContainer = styled(Container)`
 `
 
 export const HeaderLogo = styled.div`
-  width: 45px; 
+  svg {
+    height: 60px;
+    width: 150px;
+  }
 `
 
 export const HeaderList = styled.ul`
