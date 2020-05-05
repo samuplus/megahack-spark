@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import Container from 'components/Container'
+import breakpoints from 'common/breakpoints'
 
 export const Header = styled.header`
   background-color: white;
@@ -8,7 +9,13 @@ export const Header = styled.header`
   padding: 10px 0;
 
   svg {
-    width: 50px;
+    height: 30px;
+    width: 80px;
+
+    @media (${breakpoints.LARGE}) {
+      height: 60px;
+      width: 130px;
+    }
   }
 `
 

@@ -22,7 +22,8 @@ export const MenuMobile = styled.div`
 
 export const LogoWrapper = styled.div`
   svg {
-    width: 30px;
+    height: 30px;
+    width: 90px;
   }
 `
 

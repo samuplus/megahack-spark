@@ -25,8 +25,13 @@ export const HeaderContainer = styled(Container)`
 
 export const HeaderLogo = styled.div`
   svg {
-    height: 60px;
-    width: 150px;
+    height: 30px;
+    width: 80px;
+
+    @media (${breakpoints.LARGE}) {
+      height: 60px;
+      width: 130px;
+    }
   }
 `
 
