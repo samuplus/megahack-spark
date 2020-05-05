@@ -13,13 +13,11 @@ import HeaderLogout from 'components/HeaderLogout'
 import Input from 'components/Input'
 import Button from 'components/Button'
 
-import mhdAbi from 'ethereum/mhdAbi'
 import { createContract } from 'ethereum/mhdContract'
 import { createPatient } from 'ethereum/MyHeathData'
 
 import * as S from './styles'
 
-// const fortmaticKey = process.env.REACT_APP_FORMATIC_TEST
 
 const fortmaticKey = 'pk_test_89EAB55125C6D022'
 const contractAddress = '0x58e43fdcfcdbadb71533b678648f4913171e1425'
@@ -63,8 +61,6 @@ const Cadastro = () => {
       countryOfBirth: values.country,
       _ethnicity: values.ethnicity
     }
-
-    console.log({ dataToSend });
 
     const contract = createContract(contractAddress)
     createPatient({ contract, dataToSend, goTo: () => history.push('/home') })
